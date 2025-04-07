@@ -1,0 +1,160 @@
+:root {
+  --primary-color: #2196F3;
+  --secondary-color: #FFC107;
+  --dark-color: #082949d4;
+}
+
+.hero {
+
+  min-height: 80vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  animation: imge 9s linear infinite;
+  transition: 0.5s;
+}
+
+/* .search-form {
+  background: rgba(25, 20, 59, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+ */
+.nombre{
+  transform: translateX(2em);
+}
+.destination-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+}
+
+.destination-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.offer-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--secondary-color);
+  color: black;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+
+}
+
+.testimonial-card {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 10px #333c463f;
+}
+
+.testimonial-avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px #333c463f;
+}
+
+.text-muted {
+  font-size: 16px;
+}
+
+.newsletter-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+  color: white;
+  padding: 60px 0;
+}
+
+.content4 {
+  /* padding: 5px; */
+  background: url(img/backgroun300.jpg);
+  width: 100%;
+}
+
+.navbar {
+  background: linear-gradient(to bottom, #0a1e2d5c, #0a1e2d);
+  backdrop-filter: blur(2px);
+  border-radius: 02px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes imge {
+  0% {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('https://images.unsplash.com/photo-1469474968028-56623f02e42e') center/cover;
+  }
+
+  25% {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('https://talcualdigital.com/wp-content/uploads/2022/09/turismo-en-Venezuela.jpg') center/cover;
+  }
+
+  50% {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRKP5Flf-ctrZjTfr6WnGCz2C4XBNXEs4xqAJIiIDCNMnVSuRn23monlgVH81fYUQVDA9ZMvzIxygvKDHh-B-9icaABNioXvdTPTr-OhQ') center/cover;
+  }
+
+  75% {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('https://denomades.s3.us-west-2.amazonaws.com/blog/wp-content/uploads/2018/03/05105242/sanandres.jpg') center/cover;
+  }
+
+  100% {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('https://lh5.googleusercontent.com/p/AF1QipMn90yp5w9ZKL3K5XmKxScQnffXTUUHPiVnWd3d=w810-h468-n-k-no') center/cover;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.form-floating>label {
+  padding-left: 20px;
+}
+
+.stats-counter {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.counter-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+footer {
+  bottom: 0;
+}
+
+
+@media (max-width: 700px) {}

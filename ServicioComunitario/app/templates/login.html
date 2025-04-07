@@ -1,0 +1,126 @@
+{% extends "layout.html" %} {% block content %}
+
+<title>Servicio Comunitario</title>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/login.css') }}"
+/>
+
+<!-- NAVBAR CREATION -->
+<header class="header">
+  <nav class="navbar2">
+    <i class="magic-text" href="">
+      <i class="fas fa-plane-departure"></i> Servicio Comunitario
+    </i>
+    <a href="#">Inicio</a>
+    <a href="#">Paquetes</a>
+    <a href="#">Destinos</a>
+  </nav>
+</header>
+
+<!-- LOGIN FORM CREATION -->
+<div class="background"></div>
+<div class="container">
+  <div class="item">
+    <h2 class="logo"><i class="bx bxl-xing"></i>Servicio Comunitario</h2>
+    <div class="text-item">
+      <!-- <h2>Bienvenido! <br /><span>a tu Agencia</span></h2>
+      <p>dispuestos para ti 24/7 para brindarte el mejor servicio</p> -->
+      <div class="social-icon">
+        <a href="#"><i class="bx bxl-facebook text-light"></i></a>
+        <a href="#"><i class="bx bxl-twitter text-light"></i></a>
+        <a href="#"><i class="bx bxl-youtube text-light"></i></a>
+        <a href="#"><i class="bx bxl-instagram text-light"></i></a>
+        <a href="#"><i class="bx bxl-linkedin text-light"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="login-section">
+    <div class="form-box login">
+      <form method="POST" action="{{ url_for('login') }}">
+        <h2>Iniciar Sesion</h2>
+        <div class="input-box">
+          <span class="icon"><i class="bx bxs-envelope"></i></span>
+          <input type="email" name="email" required />
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><i class="bx bxs-lock-alt"></i></span>
+          <input type="password" name="password" required />
+          <label>Password</label>
+        </div>
+        <div class="remember-password">
+          <label for=""><input type="checkbox" />Remember Me</label>
+          <a href="#">Forget Password</a>
+        </div>
+        <button class="btn">Iniciar Sesion</button>
+        <div class="create-account">
+          <p class="text-light">
+            No estas registrado?
+            <a href="#" class="register-link ml-2">Registrar</a>
+          </p>
+        </div>
+      </form>
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alermensaje">
+        <span> <button id="exit">X</button></span>{{ message }}
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
+    </div>
+    <div class="form-box register mt-3">
+      <form method="POST" action="{{ url_for('registro') }}">
+        <h2>Registrar</h2>
+        <div class="input-box">
+          <span class="icon"><i class="bx bxs-user"></i></span>
+          <input type="text" name="username" required />
+          <label>Username</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><i class="bx bxs-user"></i></span>
+          <input type="text" name="nombre" required />
+          <label>Nombre</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><i class="bx bxs-user"></i></span>
+          <input type="text" name="apellido" required />
+          <label>Apellido</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><i class="bx bxs-envelope"></i></span>
+          <input type="email" name="email" required />
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><i class="bx bxs-lock-alt"></i></span>
+          <input type="password" name="password" required />
+          <label>Password</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><i class="bx bxs-phone"></i></span>
+          <input type="text" name="telefono" />
+          <label>Teléfono</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><i class="bx bxs-map"></i></span>
+          <input type="text" name="direccion" />
+          <label>Dirección</label>
+        </div>
+        <div class="remember-password">
+          <label for=""
+            ><input type="checkbox" />I agree with this statement</label
+          >
+        </div>
+        <button class="btn RegistC">Registrar</button>
+        <div class="create-account">
+          <p class="text-light">
+            Registrado?
+            <a href="#" class="login-link">Iniciar Sesion</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>

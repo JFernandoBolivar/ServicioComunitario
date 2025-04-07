@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-dark ">
+  <div class="container">
+    <a class="navbar-brand" href="{{ url_for('home') }}">
+      <i class="fas fa-plane-departure"></i> MundoMágico
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('paquetes') }}">Paquetes</a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link" href="{{ url_for('destinos') }}">Destinos</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <!-- <a class="nav-link" href="#">
+            <i class="fas fa-shopping-cart"></i> Carrito
+          </a> -->
+        </li>
+        {% if current_user.is_authenticated %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light nombre" href="#" id="userDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            *{{ current_user.username }}*
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <li><a class="dropdown-item" id="btn_exit" href="{{ url_for('logout') }}"><i
+                  class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+          </ul>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('login') }}" id="login">
+            <i class="fas fa-user"></i> Iniciar Sesión / Registrar
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{% block contentt %}
+{% endblock %}
+{% endblock %}
